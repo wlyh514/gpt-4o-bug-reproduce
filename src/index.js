@@ -28,7 +28,7 @@ const result = await openai.chat.completions.create({
     type: 'function',
     function: {
       name: 'reply',
-      description: 'Reply to a user in the transcript. This is the only method to let your response be seen by the users.',
+      description: 'Reply to a user in the transcription. This is the only method to let your response be seen by the users.',
       parameters: {
         'type': 'object',
         'properties': {
@@ -63,5 +63,6 @@ const result = await openai.chat.completions.create({
   seed,
 });
 
-console.log(result.choices[0], result.choices[0].message.tool_calls);
+console.log(result.choices[0]);
+console.log('tool calls', result.choices[0].message.tool_calls);
 console.log('seed', seed);
